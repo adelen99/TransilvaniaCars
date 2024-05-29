@@ -46,8 +46,6 @@ const Cars = () => {
   if (loading) {
     return <div>Încărcare...</div>;
   }
-
-  // Extrage branduri unice pentru dropdown
   const uniqueBrands = [
     ...Array.from(new Set(cars.map((car) => car.brand.toLowerCase()))).map(
       (brand) => brand.charAt(0).toUpperCase() + brand.slice(1)

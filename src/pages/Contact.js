@@ -1,8 +1,5 @@
 import React from "react";
-import ContactSection from "../components/ContactSection";
-import ContactForm from "../components/ContactForm";
-import Footer from "../components/Footer";
-
+import { ContactSection, ContactForm, Footer } from "../components";
 const Contact = () => {
   return (
     <div>
@@ -11,7 +8,7 @@ const Contact = () => {
           Contact
         </h1>
       </div>
-      <div className='flex flex justify-center items-center'>
+      <div className='flex justify-center items-center'>
         <ContactSection />
       </div>
       <div className='w-full  h-full my-10'>

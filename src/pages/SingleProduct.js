@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { supabase } from "../utils/supabaseClient";
-import Footer from "../components/Footer";
+import { Footer } from "../components";
 
 const SingleProduct = () => {
   const { id } = useParams();

@@ -6,11 +6,10 @@ const Carousel = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prevImage) => (prevImage === 4 ? 1 : prevImage + 1));
-    }, 7000); // Change image every 7 seconds
+    }, 7000);
 
-    return () => clearInterval(interval); // Clear interval on component unmount
-  }, []); // Run this effect only once after component mounts
-
+    return () => clearInterval(interval);
+  }, []);
   return (
     <>
       <div className='carousel w-full'>

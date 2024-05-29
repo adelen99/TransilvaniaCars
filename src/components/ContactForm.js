@@ -23,12 +23,12 @@ const ContactForm = () => {
       )
       .then(
         () => {
-          console.log("SUCCESS!"); // Debugging
-          toast.success("Mesajul tău a fost trimis"); // Show success toast
+          console.log("SUCCESS!");
+          toast.success("Mesajul tău a fost trimis");
         },
         (error) => {
-          console.log("FAILED...", error.text); // Debugging
-          toast.error("Eroare la trimiterea mesajului"); // Show error toast
+          console.log("FAILED...", error.text);
+          toast.error("Eroare la trimiterea mesajului");
         }
       );
   };

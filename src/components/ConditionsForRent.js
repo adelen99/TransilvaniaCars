@@ -10,14 +10,14 @@ const ConditionsForRent = () => {
     const options = {
       root: null,
       rootMargin: "0px",
-      threshold: 0.5, // pragul de vizibilitate la 50%
+      threshold: 0.5,
     };
 
     const headerObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setIsHeaderVisible(true);
-          headerObserver.disconnect(); // Oprim observatorul pentru a evita verificările inutile
+          headerObserver.disconnect();
         }
       });
     }, options);
@@ -26,7 +26,7 @@ const ConditionsForRent = () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setIsListVisible(true);
-          listObserver.disconnect(); // Oprim observatorul pentru a evita verificările inutile
+          listObserver.disconnect();
         }
       });
     }, options);
@@ -40,7 +40,6 @@ const ConditionsForRent = () => {
     }
 
     return () => {
-      // Dezabonăm observatorii la demontarea componentei
       headerObserver.disconnect();
       listObserver.disconnect();
     };

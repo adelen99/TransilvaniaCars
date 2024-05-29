@@ -1,4 +1,3 @@
-// Sidebar.js
 import React from "react";
 import { links } from "../utils/constants";
 import { Link } from "react-router-dom";

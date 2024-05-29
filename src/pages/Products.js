@@ -1,6 +1,5 @@
 import React from "react";
-import Cars from "../components/Cars";
-import Footer from "../components/Footer";
+import { Cars, Footer } from "../components";
 
 const Products = () => {
   return (

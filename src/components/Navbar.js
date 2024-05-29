@@ -9,12 +9,10 @@ import ContactHero from "./ContactHero";
 
 const Navbar = () => {
   const [showSidebar, setShowSidebar] = useState(false);
-  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768);
 
   useEffect(() => {
     const handleResize = () => {
       const smallScreen = window.innerWidth < 768;
-      setIsSmallScreen(smallScreen);
       if (!smallScreen) {
         setShowSidebar(false);
       }
@@ -22,7 +20,6 @@ const Navbar = () => {
 
     window.addEventListener("resize", handleResize);
 
-    // Clean up event listener on component unmount
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -36,7 +33,6 @@ const Navbar = () => {
     <>
       <ContactHero />
       <div className='p-4 flex items-center justify-between px-4 border-b border-gray-300 rounded'>
-        {/* Fixed Logo */}
         <div className='flex items-center'>
           <Logo />
         </div>
@@ -51,13 +47,11 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        {/* Hamburger menu for small screens */}
         <button
           className='text-2xl lg:hidden relative z-10'
           onClick={toggleSidebar}>
           {showSidebar ? <FaTimes /> : <GiHamburgerMenu size={24} />}
         </button>
-        {/* Sidebar */}
         <Sidebar showSidebar={showSidebar} toggleSidebar={toggleSidebar} />
       </div>
     </>

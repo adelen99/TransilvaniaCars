@@ -4,7 +4,6 @@ import { supabase } from "../utils/supabaseClient";
 
 const CarsForHomePage = () => {
   const [cars, setCars] = useState([]);
-  const [startIndex, setStartIndex] = useState(0);
   const [loading, setLoading] = useState(true);
   const [carsPerPage, setCarsPerPage] = useState(3);
 
@@ -38,7 +37,7 @@ const CarsForHomePage = () => {
       }
     };
 
-    handleResize(); // Call it initially to set the correct value
+    handleResize();
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
@@ -65,7 +64,7 @@ const CarsForHomePage = () => {
       <div className='relative '>
         <div
           className={`flex grid-cols-${carsPerPage} gap-8 justify-center p-4`}>
-          {cars.slice(startIndex, startIndex + carsPerPage).map((car) => (
+          {cars.map((car) => (
             <div
               key={car.id}
               className='bg-white rounded-md shadow-md p-4 flex flex-col justify-center items-center'>
