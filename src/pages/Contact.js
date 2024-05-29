@@ -2,7 +2,7 @@ import React from "react";
 import { ContactSection, ContactForm, Footer } from "../components";
 const Contact = () => {
   return (
-    <div>
+    <div className='min-h-screen'>
       <div className='flex flex-col justify-center items-center p-8'>
         <h1 className='text-4xl font-bold border-b-2 border-rounded border-yellow-200'>
           Contact

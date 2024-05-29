@@ -7,11 +7,11 @@ const Description2 = () => {
       <h1 className='font-bold text-center text-2xl  py-2'>
         Închiriază modele economice, confortabile și eficiente.
       </h1>
-      <p className='text-lg  sm:px-0 md:px-0 lg:px-32'>
+      <p className='text-lg  px-2  md:px-0 lg:px-32'>
         Transilvania Cars îți oferă soluția ideală pentru a închiria rapid o
         mașină premium, în condiții flexibile și fără costuri suplimentare.
       </p>
-      <p className='text-lg py-2 sm:px-0 md:px-0 lg:px-32'>
+      <p className='text-lg px-2  md:px-0 lg:px-32'>
         Flota noastră cuprinde o gamă variată de autoturisme de închiriat în
         Cluj, de la modele economice la modele luxoase. Ne asigurăm că mașinile
         noastre sunt întreținute la cele mai înalte standarde pentru a-ți oferi

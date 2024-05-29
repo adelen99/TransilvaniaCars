@@ -11,7 +11,7 @@ import {
 
 const Home = () => {
   return (
-    <>
+    <div className='min-h-screen'>
       <TitleHero />
       <Carousel />
       <Description />
@@ -19,7 +19,7 @@ const Home = () => {
       <ConditionsForRent />
       <CarsForHomePage />
       <Footer />
-    </>
+    </div>
   );
 };
 

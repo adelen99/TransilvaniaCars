@@ -48,7 +48,7 @@ const SingleProduct = () => {
   }
 
   return (
-    <div>
+    <div className='min-h-screen'>
       <div className='flex flex-col justify-center items-center'>
         <div className='card mx-auto bg-base-100 shadow-xl p-6 lg:w-1/2'>
           <figure>
