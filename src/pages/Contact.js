@@ -25,7 +25,8 @@ const Contact = () => {
             height='450'
             style={{ border: 0 }}
             allowFullScreen=''
-            loading='lazy'></iframe>
+            loading='lazy'
+            title='Google Maps Location'></iframe>
         </div>
       </div>
       <div className='flex flex-col lg:flex-row justify-center items-start gap-8 p-6 h-screen'>

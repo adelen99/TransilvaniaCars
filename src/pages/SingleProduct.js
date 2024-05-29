@@ -52,7 +52,7 @@ const SingleProduct = () => {
       <div className='flex flex-col justify-center items-center'>
         <div className='card mx-auto bg-base-100 shadow-xl p-6 lg:w-1/2'>
           <figure>
-            <img src={singleCar.img} alt='Car Image' />
+            <img src={singleCar.img} alt='img' />
           </figure>
           <div className='card-body'>
             <h2 className='card-title text-xl'>

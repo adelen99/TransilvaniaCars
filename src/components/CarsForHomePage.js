@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { supabase } from "../utils/supabaseClient";
 
