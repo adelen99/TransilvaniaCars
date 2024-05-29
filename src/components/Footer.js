@@ -1,7 +1,11 @@
 import React from "react";
 
 const Footer = () => {
-  return <div>Footer</div>;
+  return (
+    <footer className='bg-gray-800 text-white text-center p-8'>
+      <p className=''>&copy; 2024 TransilvaniaCars. All rights reserved.</p>
+    </footer>
+  );
 };
 
 export default Footer;

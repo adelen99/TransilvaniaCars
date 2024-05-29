@@ -1,87 +1,90 @@
 import React, { useEffect, useState } from "react";
-import { cars } from "../utils/constants";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchCars } from "../redux/carsSlicer";
 import { Link } from "react-router-dom";
+import { supabase } from "../utils/supabaseClient";
 
 const CarsForHomePage = () => {
+  const [cars, setCars] = useState([]);
   const [startIndex, setStartIndex] = useState(0);
-  const dispatch = useDispatch();
-  const data = useSelector((state) => state.cars);
+  const [loading, setLoading] = useState(true);
+  const [carsPerPage, setCarsPerPage] = useState(3);
 
   useEffect(() => {
-    dispatch(fetchCars());
+    const fetchFeaturedCars = async () => {
+      setLoading(true);
+      const { data, error } = await supabase
+        .from("cars")
+        .select("*")
+        .eq("featured", true);
+
+      if (error) {
+        console.error(error);
+      } else {
+        setCars(data);
+      }
+      setLoading(false);
+    };
+
+    fetchFeaturedCars();
   }, []);
 
-  const carsPerPage = 3;
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 640) {
+        setCarsPerPage(1);
+      } else if (window.innerWidth < 768) {
+        setCarsPerPage(2);
+      } else {
+        setCarsPerPage(3);
+      }
+    };
 
-  const handlePrevPage = () => {
-    setStartIndex((prevIndex) => Math.max(prevIndex - 1, 0));
-  };
-  // console.log(data.data);
+    handleResize(); // Call it initially to set the correct value
+    window.addEventListener("resize", handleResize);
 
-  const handleNextPage = () => {
-    setStartIndex((prevIndex) =>
-      Math.min(prevIndex + 1, cars.length - carsPerPage)
-    );
-  };
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
-    <>
-      <div className='bg-gray-100'>
-        <div className='flex flex-col justify-center'>
-          <h1 className='py-8 text-center text-3xl font-bold'>
-            Masinile noastre
-          </h1>
-          <p className='text-center px-48'>
-            Cu Transilvania Cars, închirierea unei mașini devine o experiență
-            fără griji. Procesul este simplu și eficient, iar noi suntem aici
-            pentru a-ți oferi suportul necesar. Oferim o gamă variată de mașini,
-            de la compacte la modele economice și premium, astfel încât să
-            găsești întotdeauna ce ai nevoie pentru călătoria ta.
-          </p>
-        </div>
-        <div className='relative'>
-          <div className='grid grid-cols-3 gap-4 justify-center p-4'>
-            {data &&
-              data.data &&
-              data.data
-                .slice(startIndex, startIndex + carsPerPage)
-                .map((car) => {
-                  return (
-                    <div
-                      key={car.id}
-                      className='bg-white rounded-md shadow-md p-4 flex flex-col justify-center items-center'>
-                      <img src={car.img} alt={car.name} />
-                      <h2 className='text-lg font-semibold'>{car.name}</h2>
-                      <p>An: {car.year}</p>
-                      <p>Cutie de viteze: {car.transmission}</p>
-                      <p>Preț: {car.price} $/zi</p>
-                      <Link to={`/products/${car.id}`} className='btn'>
-                        Vizualizati
-                      </Link>
-                    </div>
-                  );
-                })}
-          </div>
-          <div className='absolute top-1/2 transform -translate-y-1/2 flex justify-between w-full'>
-            <button
-              onClick={handlePrevPage}
-              disabled={startIndex === 0}
-              className='btn'>
-              <FaChevronLeft />
-            </button>
-            <button
-              onClick={handleNextPage}
-              disabled={startIndex >= cars.length - carsPerPage}
-              className='btn'>
-              <FaChevronRight />
-            </button>
-          </div>
+    <div className='bg-gray-100'>
+      <div className='flex flex-col justify-center'>
+        <h1 className='py-8 text-center text-4xl font-bold'>
+          Mașinile noastre
+        </h1>
+        <p className='text-start p-4 text-xl lg:px-72'>
+          Cu Transilvania Cars, închirierea unei mașini devine o experiență fără
+          griji. Procesul este simplu și eficient, iar noi suntem aici pentru
+          a-ți oferi suportul necesar. Oferim o gamă variată de mașini, de la
+          compacte la modele economice și premium, astfel încât să găsești
+          întotdeauna ce ai nevoie pentru călătoria ta.
+        </p>
+      </div>
+      <div className='relative '>
+        <div
+          className={`flex grid-cols-${carsPerPage} gap-8 justify-center p-4`}>
+          {cars.slice(startIndex, startIndex + carsPerPage).map((car) => (
+            <div
+              key={car.id}
+              className='bg-white rounded-md shadow-md p-4 flex flex-col justify-center items-center'>
+              <img src={car.img} alt={car.name} />
+              <h2 className='text-md  font-semibold'>{car.name}</h2>
+              <p>An: {car.year}</p>
+              <p>Cutie de viteze: {car.transmission}</p>
+              <p>Preț: {car.price} €/zi</p>
+              <Link
+                to={`/mașini/${car.id}`}
+                className='btn hover:bg-yellow-200 mt-2 border-none font-semibold'>
+                Vizualizați
+              </Link>
+            </div>
+          ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

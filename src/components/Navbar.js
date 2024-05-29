@@ -35,7 +35,7 @@ const Navbar = () => {
   return (
     <>
       <ContactHero />
-      <div className='p-4 flex items-center justify-between px-4'>
+      <div className='p-4 flex items-center justify-between px-4 border-b border-gray-300 rounded'>
         {/* Fixed Logo */}
         <div className='flex items-center'>
           <Logo />
@@ -44,7 +44,7 @@ const Navbar = () => {
           {links.map((link) => (
             <li key={link.id}>
               <Link
-                className='text-md font-semibold hover:text-yellow-500 p-4'
+                className=' text-md font-semibold hover:text-yellow-500 p-4'
                 to={link.url}>
                 {link.text}
               </Link>

@@ -1,7 +1,7 @@
 export const links = [
-  { id: 1, text: "Home", url: "/" },
-  { id: 2, text: "About", url: "/about" },
-  { id: 3, text: "Products", url: "/products" },
+  { id: 1, text: "Acasă", url: "/" },
+  { id: 2, text: "Despre noi", url: "/despre-noi" },
+  { id: 3, text: "Mașini", url: "/mașini" },
   { id: 4, text: "Contact", url: "/contact" },
 ];
 

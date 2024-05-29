@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Logo = () => {
   return (
-    <div className=' text-black text-2xl font-bold '>
-      Transilvania<span className='text-yellow-500 '>Cars</span>
-    </div>
+    <Link to='/' className='font-poetsen text-black text-3xl font-bold '>
+      Transilvania<span className='text-yellow-300 '>Cars</span>
+    </Link>
   );
 };
 

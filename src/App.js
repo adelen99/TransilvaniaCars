@@ -11,13 +11,12 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
+          <Route path='/despre-noi' element={<About />} />
           <Route path='/contact' element={<Contact />} />
-          <Route path='/cars' element={<Products />} />
-          <Route path='/cars/:id' element={<SingleProduct />} />
+          <Route path='/mașini' element={<Products />} />
+          <Route path='/mașini/:id' element={<SingleProduct />} />
           <Route path='*' element={<Error />} />
         </Routes>
-        <Footer />
       </div>
     </Router>
   );
