@@ -126,7 +126,7 @@ const Cars = () => {
                 <p className='font-semibold'>Număr de locuri: {car.locuri}</p>
                 <div className='card-actions justify-end'>
                   <Link
-                    to={`/cars/${car.id}`}
+                    to={`/mașini/${car.id}`}
                     className='btn hover:bg-yellow-200 border-none'>
                     Vizualizați
                   </Link>

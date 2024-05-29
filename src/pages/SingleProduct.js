@@ -62,22 +62,22 @@ const SingleProduct = () => {
               </div>
             </h2>
             <p className='text-gray-600 mt-2 mb-4'>{singleCar.description}</p>
-            <div className='card-actions grid grid-cols-2 font-semibold'>
-              <div className='badge badge-outline bg-yellow-200 border-none'>
+            <div className='card-actions grid grid-cols-1 font-semibold'>
+              <div className='badge badge-outline font-mono bg-yellow-200 border-none'>
                 An: {singleCar.year}
               </div>
-              <div className='badge badge-outline bg-yellow-200 border-none'>
-                Cutie viteze: {singleCar.transmission}
+              <div className='badge badge-outline font-mono bg-yellow-200 border-none'>
+                Transmisie: {singleCar.transmission}
               </div>
-              <div className='badge badge-outline bg-yellow-200 border-none'>
+              <div className='badge badge-outline font-mono bg-yellow-200 border-none'>
                 Număr locuri: {singleCar.locuri}
               </div>
-              <div className='badge badge-outline bg-yellow-200 border-none capitalize'>
+              <div className='badge badge-outline font-mono bg-yellow-200 border-none capitalize'>
                 Carburant: {singleCar.carburant}
               </div>
               {singleCar.price !== "Variabil" && (
-                <div className='badge badge-outline bg-yellow-200 border-none'>
-                  Pret: {singleCar.price}
+                <div className='badge badge-outline font-mono bg-yellow-200 border-none'>
+                  Preț: {singleCar.price}
                 </div>
               )}
             </div>

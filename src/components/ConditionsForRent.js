@@ -54,7 +54,7 @@ const ConditionsForRent = () => {
         }`}>
         <h2
           ref={headerRef}
-          className={`text-lg mb-2 sm:text-xl md:text-2xl font-bold ${
+          className={`text-xl mb-2 sm:text-xl md:text-2xl font-bold ${
             isHeaderVisible ? "slide-in-right" : ""
           }`}>
           Condiții de Închiriere Auto

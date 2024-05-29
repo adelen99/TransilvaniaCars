@@ -50,10 +50,10 @@ const CarsForHomePage = () => {
   return (
     <div className='bg-gray-100'>
       <div className='flex flex-col justify-center'>
-        <h1 className='py-8 text-center text-4xl font-bold'>
+        <h1 className='pt-4 text-center text-2xl font-bold'>
           Mașinile noastre
         </h1>
-        <p className='text-start p-4 text-xl lg:px-72'>
+        <p className='text-start p-4 text-lg lg:px-72'>
           Cu Transilvania Cars, închirierea unei mașini devine o experiență fără
           griji. Procesul este simplu și eficient, iar noi suntem aici pentru
           a-ți oferi suportul necesar. Oferim o gamă variată de mașini, de la
@@ -63,8 +63,8 @@ const CarsForHomePage = () => {
       </div>
       <div className='relative '>
         <div
-          className={`flex grid-cols-${carsPerPage} gap-8 justify-center p-4`}>
-          {cars.map((car) => (
+          className={`flex grid-cols-${carsPerPage} gap-8 justify-center p-4 `}>
+          {cars.slice(0, carsPerPage).map((car) => (
             <div
               key={car.id}
               className='bg-white rounded-md shadow-md p-4 flex flex-col justify-center items-center'>

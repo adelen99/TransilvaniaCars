@@ -12,15 +12,15 @@ const TitleHero = () => {
   }, []);
 
   return (
-    <div className='flex flex-col items-center py-4 bg-yellow-200 '>
+    <div className='flex flex-col text-center items-center py-4 bg-yellow-200'>
       <h1
-        className={`text-3xl font-bold ${
+        className={` text-2xl font-bold ${
           animate ? "slide-in-left" : "hiddenOpacity"
         }`}>
         Mașini de închiriat Cluj-Napoca
       </h1>
       <h2
-        className={`text-xl font-semibold ${
+        className={`text-lg font-semibold ${
           animate ? "slide-in-right" : "hiddenOpacity"
         }`}>
         Închirieri auto la prețuri avantajoase
