@@ -83,13 +83,13 @@ const SingleProduct = () => {
             </div>
             {singleCar.price === "Variabil" && (
               <div className='font-semibold text-sm'>
-                <div className='rounded-xl p-2 inline-block bg-yellow-200 '>
+                <div className='rounded-xl p-2 inline-block font-mono bg-yellow-200 '>
                   <p>
                     Prețul variază în funcție de perioada de închiriere și
                     distanța parcursă.
                   </p>
                 </div>
-                <div className='rounded-xl p-2 mt-2 inline-block bg-yellow-200'>
+                <div className='rounded-xl p-2 mt-2 inline-block font-mono bg-yellow-200'>
                   <p>Există opțiunea de a se închiria cu tot cu șofer.</p>
                 </div>
               </div>

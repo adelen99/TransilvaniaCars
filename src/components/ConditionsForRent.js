@@ -1,62 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 
 const ConditionsForRent = () => {
-  const headerRef = useRef(null);
-  const listRef = useRef(null);
-  const [isHeaderVisible, setIsHeaderVisible] = useState(false);
-  const [isListVisible, setIsListVisible] = useState(false);
-
-  useEffect(() => {
-    const options = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.5,
-    };
-
-    const headerObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setIsHeaderVisible(true);
-          headerObserver.disconnect();
-        }
-      });
-    }, options);
-
-    const listObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setIsListVisible(true);
-          listObserver.disconnect();
-        }
-      });
-    }, options);
-
-    if (headerRef.current) {
-      headerObserver.observe(headerRef.current);
-    }
-
-    if (listRef.current) {
-      listObserver.observe(listRef.current);
-    }
-
-    return () => {
-      headerObserver.disconnect();
-      listObserver.disconnect();
-    };
-  }, []);
-
   return (
     <div className='flex flex-col text-center justify-center items-center bg-yellow-200 p-4'>
-      <ol
-        ref={listRef}
-        className={`p-2  text-sm sm:text-lg md:text-xl ${
-          isListVisible ? "slide-in-right" : ""
-        }`}>
-        <h2
-          ref={headerRef}
-          className={`text-xl mb-2 sm:text-xl md:text-2xl font-bold ${
-            isHeaderVisible ? "slide-in-right" : ""
-          }`}>
+      <ol className='p-2 text-md '>
+        <h2 className='text-xl mb-2 sm:text-xl md:text-2xl font-bold'>
           Condiții de Închiriere Auto
         </h2>
         <li className='mb-2'>

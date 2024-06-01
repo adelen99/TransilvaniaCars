@@ -5,7 +5,7 @@ const Carousel = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImage((prevImage) => (prevImage === 4 ? 1 : prevImage + 1));
+      setCurrentImage((prevImage) => (prevImage === 3 ? 1 : prevImage + 1));
     }, 7000);
 
     return () => clearInterval(interval);
@@ -43,17 +43,6 @@ const Carousel = () => {
           <img
             src='https://yetrkwbxweagaibutsoh.supabase.co/storage/v1/object/public/cars/carouselSlide3.jpeg'
             alt='img3'
-            className='w-full h-auto sm:h-[350px] md:h-[400px] lg:h-[500px]'
-          />
-        </div>
-        <div
-          id='item4'
-          className={`carousel-item w-full ${
-            currentImage === 4 ? "block" : "hidden"
-          }`}>
-          <img
-            src='https://yetrkwbxweagaibutsoh.supabase.co/storage/v1/object/public/cars/carouselSlide4.jpeg'
-            alt='img4'
             className='w-full h-auto sm:h-[350px] md:h-[400px] lg:h-[500px]'
           />
         </div>

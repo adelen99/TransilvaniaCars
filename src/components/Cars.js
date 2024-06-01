@@ -132,10 +132,16 @@ const Cars = () => {
                 </figure>
                 <div className='card-body'>
                   <h2 className='card-title '>{car.name}</h2>
-                  <p className='font-semibold capitalize'>Brand: {car.brand}</p>
-                  <p className='font-semibold'>An: {car.year}</p>
-                  <p className='font-semibold'>Preț: {car.price}</p>
-                  <p className='font-semibold'>Număr de locuri: {car.locuri}</p>
+                  <p className='font-semibold text-gray-600 capitalize'>
+                    Brand: {car.brand}
+                  </p>
+                  <p className='font-semibold text-gray-600'>An: {car.year}</p>
+                  <p className='font-semibold text-gray-600'>
+                    Preț: {car.price}
+                  </p>
+                  <p className='font-semibold text-gray-600'>
+                    Număr de locuri: {car.locuri}
+                  </p>
                   <div className='card-actions justify-end'>
                     <Link
                       to={`/mașini/${car.id}`}
