@@ -17,7 +17,7 @@ const Description2 = () => {
         noastre sunt întreținute la cele mai înalte standarde pentru a-ți oferi
         o experiență sigură și plăcută în timpul călătoriei tale.
       </p>
-      <div className='flex justify-center mb-4'>
+      <div className='flex justify-center mb-3 mt-3'>
         <Link
           to='/despre-noi'
           className='mr-2 btn font-semibold 
