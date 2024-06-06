@@ -12,7 +12,7 @@ const ConditionsForRent = () => {
           pentru a închiria o mașină.
         </li>
         <li className='mb-2'>
-          <strong>Permis de Conducere:</strong> Trebuie să deții un permis de
+          <strong>Permis de Conducere:</strong> Trebuie să deții un permis
           conducere valid și în vigoare.
         </li>
         <li className='mb-2'>
